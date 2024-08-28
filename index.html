@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        
         <link 
             rel="stylesheet" 
             href="assets/css/styles.css"
@@ -21,7 +22,7 @@
     </head>
     <body>
         <nav>
-            <h1> Sakuサク</h1>
+            <h1 class="container-name" id="typed-text"></h1>
             <ul class="nav">
                 <li><a href="#sobreMi">Sobre mi</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
@@ -33,17 +34,26 @@
             </button>
         </nav>
 
-        <section class="hero" id="about">
+        <section class="me" id="about">
+
+            <div>
+                <h1 class="aka">Hi im Sakuサク.</h1>
+                <p class="aka">Ingeniero de Sistemas y Desarrollador Web</p> 
+                
+            </div>
+
             <img
                 src="assets/images/Yo.png"
                 alt="Sakuサク"
                 loading="lazy"
                 class="hero-img"
             />
+
             <div class="bio animate__animated animate shakeX">
-                <h2 class=" bio-titulo">Sobre Mi</h2>
+                <h1 class=" bio-titulo">Sobre Mi</h1>
                 <p class="bio-texto">
-                    Soy un estudiante de Ingeniería en Sistemas y un desarrollador web joven y apasionado por la creación de interfaces amigables y efectivas.
+                    Hola! Mi nombre es Andrés Piña también conocido como Sakuサク;
+                    Soy un estudiante de Ingeniería en Sistemas y un desarrollador web joven, apasionado por la creación de interfaces amigables y efectivas.<br>
                     Me gusta trabajar en equipo y diseñar soluciones que satisfagan las necesidades de mis clientes.
                     Actualmente, estoy enfocado en el desarrollo de sitios web responsiv y aplicaciones móviles.
                 </p>
@@ -68,19 +78,19 @@
                 <div class="first-set animate__animated animate__pulse">
                     <img
                         src="assets/icons/html5.svg"
-                        alt=""
+                        alt="html5"
                         loading="lazy"
                         class="icon icon-card"
                     />
                     <img
                         src="assets/icons/css.svg"
-                        alt=""
+                        alt="CSS"
                         loading="lazy"
                         class="icon icon-card"
                     />
                     <img
                         src="assets/icons/js.svg"
-                        alt=""
+                        alt="java"
                         loading="lazy"
                         class="icon icon-card"
                     />                                        
@@ -88,38 +98,38 @@
                 <div class="second-set animate__animated animate__pulse">
                     <img
                         src="assets/icons/figma.svg"
-                        alt=""
+                        alt="figma"
                         loading="lazy"
                         class="icon icon-card"
                     />
                     <img
                         src="assets/icons/Git.svg"
-                        alt=""
+                        alt="git"
                         loading="lazy"
                         class="icon icon-card"
                     />
                     <img
                         src="assets/icons/C.svg"
-                        alt=""
+                        alt="c"
                         loading="lazy"
                         class="icon icon-card"
                     />
                     <div class="third-set animate__animated animate__pulse">
                         <img
                             src="assets/icons/Github.svg"
-                            alt=""
+                            alt="GH"
                             loading="lazy"
                             class="icon icon-card"
                         />
                         <img
                             src="assets/icons/python.svg"
-                            alt=""
+                            alt="Piton"
                             loading="lazy"
                             class="icon icon-card"
                         />
                         <img
                             src="assets/icons/unity.svg"
-                            alt=""
+                            alt="unity"
                             loading="lazy"
                             class="icon icon-card"
                         />
@@ -130,18 +140,88 @@
         </section>
 
         <section class="proyectos" id="proyectos">
-            <h2 class="titulo-de-proyectos">Algunos de mis proyectos recientes</h2>
+            <h2 class="titulo-de-proyectos">Un poco de lo que hago</h2>
             <div class="contenedor-de-proyectos">
-                <div class="contenedor-de-proyectos tarjeta-de-pryectos">
-                    <img/>
-
+                <div class="contenedor-de-proyectos tarjeta-de-proyectos">
+                    <img
+                        src="assets/images/Arka.png"
+                        alt="Arka"
+                        loading="lazy"
+                        class="project-pic"
+                    />
+                    <h3 class="project-title">Arkanoid</h3>
+                    <p class="project-detail">
+                        Recreación de Arkanoid 100% en Javascript y Canvas
+                    </p>
+                    <a href="#Check it!"  class="project-link">Check it!</a>
+                </div>
+                <div class="contenedor-de-proyectos tarjeta-de-proyectos">
+                    <img
+                        src="assets/images/Unitygame.png"
+                        alt="UnityGame"
+                        loading="lazy"
+                        class="project-pic"
+                    />
+                    <h3 class="project-title">Lumia Adventure</h3>
+                    <p class="project-detail">
+                        Un Juego creado en Unity programado en C#
+                    </p>
+                    <a href="#Check it!" class="project-link">Check it!</a>
                 </div>
 
             </div>
 
         </section>
 
-        //Seccion contacto
+    <section class="contacto" id="contacto">
+        <h2>Contácteme!</h2>
+        <div class="formulario-contacto-contenedor">
+            <div class="formulario-contacto">
+                <form action="https://formspree.io/f/xpwabpdp" method="POST">
+                    <div class="control-formulario">
+                        <label for="name">Nombre</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="sender-name"
+                            placeholder="Escribe tu nombre"
+                            class="input-field"
+                            required
+                        />
+                        <div class="control-formulario">
+                            <label form="email">Correo Electrónico</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="sender-email"
+                                placeholder="Ingresa tu correo electrónico"
+                                class="input-field"
+                                required
+                            />
+                        <div class="control-formulario">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea
+                                id="mensaje"
+                                cols="60"
+                                rows="10"
+                                placeholder="Escribe tu mensaje"
+                                name="mensaje"
+                                class="input-field"
+                                required
+                            ></textarea>
+                        </div>
+                        <input
+                            type="submit"
+                            value="Enviar"
+                            id="submit-btn"
+                            class="submit-btn"
+                        />
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         //Redes solciales
 
