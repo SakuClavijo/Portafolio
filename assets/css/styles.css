@@ -19,6 +19,100 @@
     --degree: linear-gradient(to top,#381537, #1c0a1b);  
 }
 
+@media screen and (max-width: 720px) {
+    .me{
+        margin-top: -4rem;
+        flex-direction:column;
+        gap: 0;
+    }
+
+    .me img{
+        height: 37.5rem;
+        width: 30rem;
+    }
+
+    .bio{
+        margin-top: 1rem;
+        width: 20.5rem;
+    }
+    .mas-sobre{
+        margin-top: 2rem;
+        padding: 1rem 3.5rem;
+    }
+
+    .mas-sobre h2{
+        text-align: center;
+    }
+
+    .mas-sobre p{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width:480px) {
+    nav{
+        padding: 0.75rem;
+    }
+
+    .me img{
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .container-name h1{
+        font-size: 1.5rem;
+    }
+
+    .bio-texto{
+        font-size: 0.875rem;
+    }
+
+    .icon{
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .submit-btn{
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    footer a{
+        font-size: 0.875;
+    }
+
+    .socialicon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .iconUp{
+        width: 2rem;
+        height: 2rem;
+    }
+    
+}
+
+/* Animacion escritura */
+
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to{
+        width: 100;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -60,10 +154,73 @@ nav{
     padding: 1.5rem 3.5rem;
     background-color: var(--secondary-color);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
     border-radius: 10rem;
-
-
 }
+
+nav.hidden{
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos principales del menú */
+#main-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    z-index: 1000;
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    list-style: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#main-nav.shrunk #menu {
+    opacity: 0; /* Oculta el menú cuando se contrae */
+}
+
+.circle-float {
+    font-size: 24px;
+    color: white;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo cuando el menú se contrae */
+#main-nav.shrunk {
+    height: 60px;
+    padding: 10px 20px;
+}
+
+/* Mostrar el texto flotante */
+#main-nav.shrunk .circle-float {
+    display: inline;
+    opacity: 1;
+}
+
+/* Mostrar el menú de nuevo al expandirse */
+#main-nav.expanded #menu {
+    opacity: 1;
+}
+
+#main-nav.expanded .circle-float {
+    display: none;
+}
+
+
 
 nav h1{
     color: #fff;
@@ -96,19 +253,6 @@ nav ul li{
 }
 
 
-/* Animacion escritura */
-
-@keyframes typing{
-    from {
-        width: 0;
-    }
-    to{
-        width: 100;
-    }
-}
-
-/*Aplicar la animacion al texto */
-
 .container-name h1{
     display: inline-block;
     white-space: nowrap;
@@ -117,15 +261,6 @@ nav ul li{
     animation: typing 3s steps(20, end)
 }
 
-.menu-hamburguesa{
-    color: var(--primary-color);
-    font-size: 2rem;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    display: none;
-
-}
 
 .me {
     display: flex;
@@ -235,8 +370,8 @@ body{
 }
 
 .project-pic{
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
 }
 
@@ -248,9 +383,11 @@ body{
 
 
 .contenedor-de-proyectos{
-    text-align: center;
-    width: 50%;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
 }
 
 .titulo-de-proyectos{
@@ -262,6 +399,7 @@ body{
 
 .contenedor-de-proyectos p{
     padding: 0.4rem;
+
 }
 
 .project-title{
@@ -293,6 +431,107 @@ body{
     border-radius: 20px;
     box-shadow: 0px 5px 10px var(--primary-shadow);
     padding: 20px;
-    margin: 30px;
+    margin: 10px;
 }
 
+.contacto{
+    padding: 2rem;
+    text-align: center;
+}
+
+.formulario-contacto-contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--degree);
+    box-shadow: 0px 10px 15px var(--primary-shadow);
+    border-radius: 10px;
+}
+
+.formulario-contacto{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem
+}
+
+.control-formulario{
+    display: grid;
+    gap: 0.5rem;
+}
+
+.input-field{
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    background-color: var(--secondary-shadow);
+    color: #333;
+    text-align: center;
+}
+
+.submit-btn{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--secondary-shadow);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.3 ease;
+}
+
+.submit-btn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px var(--primary-shadow);
+    background-color: var(--degree);
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1%;
+    bottom: 50%;
+}
+
+.socialicon{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+.loto{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: -0.4rem;
+
+}
+
+footer{
+    background-color: var(--degree);
+    padding: 1.25rem;
+    text-align: center;
+    margin: 2rem 0 0;
+}
+
+footer a{
+    color: var(--primary-shadow);
+    transition: var(--transition);
+}
+
+.arriba{
+    position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+.iconUp{
+    width: 3rem;
+    height: 3rem;
+}
